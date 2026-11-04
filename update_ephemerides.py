@@ -5,7 +5,7 @@ UTC=dt.timezone.utc
 now=dt.datetime.now(UTC).replace(minute=0,second=0,microsecond=0)
 start=now-dt.timedelta(days=2)
 end=now+dt.timedelta(days=32)
-objects={'3I/ATLAS':'DES=C/2025 N1;','161P/Hartley-IRAS':'90001108','(523) Ada':'523;'}
+objects={'3I/ATLAS':'3I;','161P/Hartley-IRAS':'90001108','(523) Ada':'523;'}
 result={'generated_utc':now.isoformat().replace('+00:00','Z'),'source':'NASA JPL Horizons; observer center Earth 500@399; QUANTITIES=2; hourly samples','objects':{},'errors':{}}
 for name,command in objects.items():
     params={'format':'json','COMMAND':command,'OBJ_DATA':'NO','MAKE_EPHEM':'YES','EPHEM_TYPE':'OBSERVER','CENTER':'500@399','START_TIME':start.strftime('%Y-%m-%d %H:%M'),'STOP_TIME':end.strftime('%Y-%m-%d %H:%M'),'STEP_SIZE':'60m','QUANTITIES':'2','CSV_FORMAT':'YES','ANG_FORMAT':'DEG','EXTRA_PREC':'YES'}
